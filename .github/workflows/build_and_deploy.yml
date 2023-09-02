@@ -55,5 +55,5 @@ jobs:
         with:
           app-name: 'akkipayaljavy'
           slot-name: 'Production'
-          package: '/home/runner/work/CloudHackathonJave/CloudHackathonJave/target/*.jar'
+          package: java-app
       
