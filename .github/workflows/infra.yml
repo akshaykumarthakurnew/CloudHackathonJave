@@ -1,9 +1,9 @@
-name: ContosoUniversity-Infra
+name: InfraDeploy
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
 
       
   # We also want to be able to run this manually from Github
