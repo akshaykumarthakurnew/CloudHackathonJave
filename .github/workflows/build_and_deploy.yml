@@ -40,6 +40,11 @@ jobs:
         with:
           name: java-app
 
+      - name: Azure Login
+        uses: Azure/login@v1.4.7
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: set appsettings
         run: az webapp config appsettings set -g "akkitestRG1" -n "akkipayaljavy" --settings 'DBHOST=akkiquarkuspostgres.postgres.database.azure.com' 'DBNAME=fruits' 'DBUSER=demoadmin' 'DBPASS=88e3-1cf40c6144fd' 'PORT=8080' 'WEBSITES_PORT=8080' 
       - name: deploy app
