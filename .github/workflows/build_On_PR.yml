@@ -23,6 +23,8 @@ jobs:
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/CodeQL.yml@main
     with:
       language: "java"
+      mavenpath: 'hibernate-orm-panache-quickstart'
+      
   buildJava_CoreReusableWf:
     needs: [lintReusableWF,scanCodeQLResuableWF]
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/build_java.yml@main
