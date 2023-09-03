@@ -9,7 +9,6 @@ on:
 
 jobs:
   lintReusableWF:
-    needs: buildJava_CoreReusableWf
     permissions:
       contents: read
       packages: read
@@ -17,7 +16,6 @@ jobs:
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/linter.yml@main
   
   scanCodeQLResuableWF:
-    needs: buildJava_CoreReusableWf
     permissions:
       actions: read
       contents: read
