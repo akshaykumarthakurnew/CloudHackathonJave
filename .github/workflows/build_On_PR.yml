@@ -1,0 +1,16 @@
+name: BuildOnPR
+
+on:
+  pull_request:
+    branches: 
+      - main
+# We also want to be able to run this manually from Github
+  workflow_dispatch:
+
+jobs:
+  buildJava_CoreReusableWf:
+    uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/build_java.yml@main
+    with:
+      packagepath: '${{ github.workspace }}/hibernate-orm-panache-quickstart/target/*.jar'
+      javaversion: '17'
+      mavenpath: './hibernate-orm-panache-quickstart'
