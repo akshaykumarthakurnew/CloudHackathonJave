@@ -11,7 +11,7 @@ jobs:
   buildJava_CoreReusableWf:
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/build_java.yml@main
     with:
-      packagepath: '${{ github.workspace }}/hibernate-orm-panache-quickstart/target/*.jar'
+      packagepath: 'hibernate-orm-panache-quickstart/target/*.jar'
       javaversion: '17'
       mavenpath: 'hibernate-orm-panache-quickstart'
       distribution: 'temurin'
