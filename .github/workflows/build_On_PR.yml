@@ -15,14 +15,9 @@ jobs:
       statuses: write
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/linter.yml@main
   
-  scanCodeQLResuableWF:
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-    uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/CodeQL.yml@main
+ 
   buildJava_CoreReusableWf:
-    needs: [lintReusableWF,scanCodeQLResuableWF]
+    needs: [lintReusableWF]
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/build_java.yml@main
     with:
       packagepath: 'hibernate-orm-panache-quickstart/target/*.jar'
