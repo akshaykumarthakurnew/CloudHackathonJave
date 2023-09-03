@@ -13,5 +13,5 @@ jobs:
     with:
       packagepath: '${{ github.workspace }}/hibernate-orm-panache-quickstart/target/*.jar'
       javaversion: '17'
-      mavenpath: './hibernate-orm-panache-quickstart'
+      mavenpath: 'hibernate-orm-panache-quickstart'
       distribution: 'temurin'
