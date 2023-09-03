@@ -23,6 +23,7 @@ jobs:
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/CodeQL.yml@main
     with:
       language: "java"
+      javaversion: '17'
       distribution: 'temurin'
       mavenpath: 'hibernate-orm-panache-quickstart'
       
