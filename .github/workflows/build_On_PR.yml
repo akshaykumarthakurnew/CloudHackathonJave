@@ -8,7 +8,23 @@ on:
   workflow_dispatch:
 
 jobs:
+  lintReusableWF:
+    needs: buildJava_CoreReusableWf
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+    uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/linter.yml@main
+  
+  scanCodeQLResuableWF:
+    needs: buildJava_CoreReusableWf
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/CodeQL.yml@main
   buildJava_CoreReusableWf:
+    needs: [lintReusableWF,scanCodeQLResuableWF]
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/build_java.yml@main
     with:
       packagepath: 'hibernate-orm-panache-quickstart/target/*.jar'
