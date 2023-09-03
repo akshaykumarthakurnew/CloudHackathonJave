@@ -15,3 +15,14 @@ jobs:
       javaversion: '17'
       mavenpath: 'hibernate-orm-panache-quickstart'
       distribution: 'temurin'
+
+  deployASPDotnetCoreReusableWF:
+    needs: [buildJava_CoreReusableWf]
+    uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/deploy_java.yml@main
+    with:
+      packagename: 'java-app'
+      appname: 'akkipayaljavy'
+      slotname: 'Production'
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      
