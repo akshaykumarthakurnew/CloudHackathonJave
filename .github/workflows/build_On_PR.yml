@@ -17,7 +17,7 @@ jobs:
   
       
   buildJava_CoreReusableWf:
-    needs: [lintReusableWF,scanCodeQLResuableWF]
+    needs: [lintReusableWF]
     uses: akshaykumarthakurnew/CloudhackathonSrc/.github/workflows/build_java.yml@main
     with:
       packagepath: 'hibernate-orm-panache-quickstart/target/*.jar'
